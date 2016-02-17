@@ -71,7 +71,7 @@ describe('Thermostat', function (){
     expect(thermostat.displayColour).toEqual("Green");
   });
 
-  it('colours the display as green for temperatures under 25 but greater than 18', function(){
+  it('colours the display as yellow for temperatures under 25 but greater than 18', function(){
     expect(thermostat.displayColour).toEqual("Yellow");
   });
 

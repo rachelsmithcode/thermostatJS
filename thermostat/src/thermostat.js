@@ -10,6 +10,7 @@ function Thermostat(){
   this.powerSavingMode = true;
   this.maxTemperature = _MAX_TEMPERATURE_ON;
   this.displayColour = "Yellow";
+  this.changeColour();
 };
 
 Thermostat.prototype.up = function(){
@@ -25,7 +26,7 @@ Thermostat.prototype.up = function(){
 };
 
 Thermostat.prototype.down = function(){
-  if (this.temperature < _MIN_TEMPERATURE) {
+  if (this.temperature === _MIN_TEMPERATURE) {
     throw new Error("Man, I could squeeze a lemon on my nipples it's that cold!")
   }
   this.temperature -= 1;
@@ -60,4 +61,5 @@ Thermostat.prototype.changeColour = function () {
     document.body.style.backgroundColor = "red";
 
   };
+
 };
