@@ -11,12 +11,12 @@ describe('Thermostat', function(){
 
   it('increases the temperature when the up button is pressed', function(){
     thermostat.up();
-    expect(thermostat.temperature).toBeGreaterThan(20);
+    expect(thermostat.temperature).toEqual(21);
   });
 
   it('decreases the temperature when the down button is pressed', function(){
     thermostat.down();
-    expect(thermostat.temperature).toBeLessThan(20);
+    expect(thermostat.temperature).toEqual(19);
   });
 
   it('returns an error when the temperature reaches the minimum', function(){
@@ -24,5 +24,37 @@ describe('Thermostat', function(){
       thermostat.down();
     }
     expect( function() {thermostat.down();} ).toThrow(new Error("Man, I could squeeze a lemon on my nipples it's that cold!"))
+  });
+  it('has a power saving mode which can be turned on', function(){
+    thermostat.powerSavingModeOff();
+    thermostat.powerSavingModeOn();
+    expect(thermostat.powerSavingMode).toEqual(true);
+  });
+  it('has a power saving mode which can be turned off', function(){
+    thermostat.powerSavingModeOff();
+    expect(thermostat.powerSavingMode).toEqual(false);
+  });
+  it('has a maximum temperature of 25 in power saving mode', function(){
+    thermostat.powerSavingModeOff();
+    thermostat.powerSavingModeOn();
+    expect(thermostat.maxTemperature).toEqual(25);
+  });
+  it('cannot have a temperature above 25 when in power saving mode', function(){
+    thermostat.powerSavingModeOff();
+    thermostat.powerSavingModeOn();
+    thermostat.temperature = 25;
+    expect( function() {thermostat.up();} ).toThrow(new Error("Jeez Louise, I feel like a turkey at Thanksgiving it's that hot"))
+  });
+  it('has a maximum temperature of 32 when power saving mode is off', function(){
+    thermostat.powerSavingModeOff();
+    expect(thermostat.maxTemperature).toEqual(32);
+  });
+  it('cannot have a temperature above 32 when power saving mode is off', function(){
+    thermostat.powerSavingModeOff();
+    thermostat.temperature = 32;
+    expect( function() {thermostat.up();} ).toThrow(new Error("HOLY MOLY IS IT NOT HOT ENOUGH FOR YOU IN HERE!!!"))
+  });
+  it('has power saving mode on by default', function(){
+    expect(thermostat.powerSavingMode).toEqual(true);
   });
 });
