@@ -9,6 +9,7 @@ function Thermostat(){
   this.temperature = _START_TEMPERATURE;
   this.powerSavingMode = true;
   this.maxTemperature = _MAX_TEMPERATURE_ON;
+  this.displayColour = "Yellow";
 };
 
 Thermostat.prototype.up = function(){
@@ -20,14 +21,15 @@ Thermostat.prototype.up = function(){
     }
   }
  this.temperature += 1;
+ this.changeColour();
 };
 
 Thermostat.prototype.down = function(){
   if (this.temperature < _MIN_TEMPERATURE) {
     throw new Error("Man, I could squeeze a lemon on my nipples it's that cold!")
-  } else {
-    this.temperature -= 1
-  };
+  }
+  this.temperature -= 1;
+  this.changeColour();
 };
 
 Thermostat.prototype.powerSavingModeOn = function(){
@@ -38,4 +40,24 @@ Thermostat.prototype.powerSavingModeOn = function(){
 Thermostat.prototype.powerSavingModeOff = function(){
   this.powerSavingMode = false;
   this.maxTemperature = _MAX_TEMPERATURE_OFF;
+};
+
+Thermostat.prototype.resetButton = function () {
+  this.temperature = 20
+};
+
+Thermostat.prototype.changeColour = function () {
+  if (this.temperature < 18) {
+    this.displayColour = "Green";
+    document.body.style.backgroundColor = "green";
+
+  } else if (this.temperature >= 18 && this.temperature < 25) {
+    this.displayColour = "Yellow";
+    document.body.style.backgroundColor = "yellow";
+
+  } else {
+    this.displayColour = "Red";
+    document.body.style.backgroundColor = "red";
+
+  };
 };

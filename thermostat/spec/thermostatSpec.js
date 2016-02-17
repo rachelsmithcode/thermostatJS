@@ -1,8 +1,8 @@
-describe('Thermostat', function(){
+describe('Thermostat', function (){
   var thermostat;
 
   beforeEach(function(){
-    thermostat = new Thermostat();
+    thermostat = new Thermostat ();
   });
 
   it('starts at 20 degrees', function(){
@@ -57,4 +57,32 @@ describe('Thermostat', function(){
   it('has power saving mode on by default', function(){
     expect(thermostat.powerSavingMode).toEqual(true);
   });
+
+  it('can be reset to 20 degrees using the reset button', function(){
+    thermostat.up()
+    thermostat.resetButton();
+    expect(thermostat.temperature).toEqual(20);
+  });
+
+  // describe ('should colour the display based on energy usage', function(){
+
+  it('colours the display as green for temperatures under 18', function(){
+    for (var i = 0; i <= 3; i++) {
+      thermostat.down();
+    }
+    expect(thermostat.displayColour).toEqual("Green");
+  });
+
+  it('colours the display as green for temperatures under 25 but greater than 18', function(){
+    expect(thermostat.displayColour).toEqual("Yellow");
+  });
+
+  it('colours the display as red for temperatures over 25', function(){
+    thermostat.powerSavingModeOff();
+    for (var i = 0; i <= 5; i++) {
+      thermostat.up()
+    }
+    expect(thermostat.displayColour).toEqual("Red");
+  });
+
 });
