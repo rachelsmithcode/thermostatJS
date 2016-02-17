@@ -64,8 +64,6 @@ describe('Thermostat', function (){
     expect(thermostat.temperature).toEqual(20);
   });
 
-  // describe ('should colour the display based on energy usage', function(){
-
   it('colours the display as green for temperatures under 18', function(){
     for (var i = 0; i <= 3; i++) {
       thermostat.down();
