@@ -59,7 +59,6 @@ Thermostat.prototype.changeColour = function () {
   } else {
     this.displayColour = "Red";
     document.body.style.backgroundColor = "red";
-
   };
 
 };
