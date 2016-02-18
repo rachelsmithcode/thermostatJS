@@ -2,15 +2,32 @@ $( document ).ready(function() {
 
   var thermostat = new Thermostat;
 
+  $pscolour = function() {
+    if (thermostat.displayColour === 'Yellow') {
+    color = 'yellow';
+    } else if (thermostat.displayColour === 'Green') {
+    color =  'green';
+    } else {
+    color =  'red';
+    }
+    $('body').css({
+      backgroundColor: color
+    });
+  }
+  
+  $pscolour();
+
   $('#temp').text(thermostat.temperature);
 
   $('#increase-temp').click(function(){
     thermostat.up();
+    $pscolour();
     $('#temp').text(thermostat.temperature);
   });
 
   $('#decrease-temp').click(function(){
     thermostat.down();
+    $pscolour();
     $('#temp').text(thermostat.temperature);
   });
 
@@ -28,5 +45,7 @@ $( document ).ready(function() {
     thermostat.resetButton();
     $('#temp').text(thermostat.temperature);
   });
+
+
 
 });

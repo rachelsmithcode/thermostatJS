@@ -1,16 +1,16 @@
 <DOCTYPE! html>
 <html>
   <head>
-    <title>Marion and Zee's Awesome Thermostat</title>
+    <title>T-1000</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script src="src/thermostat.js"></script>
     <script src="src/thermostatConsole.js"></script>
     <script src="src/weatherAPI.js"></script>
-
+    <link rel="stylesheet" type="text/css" href="css/style.css">
   </head>
 
   <body>
-    <h1>Thermosteezy bruv</h1>
+    <h1>Thermonator-1000</h1>
 
     <h2>Temperature</h2>
     <p>Temperature is: </p>
@@ -25,17 +25,17 @@
     <button type="button" id="psm-off">Power Saving Mode Off</button><br><br>
 
     <h2>Reset</h2>
-    <button type="button" id="reset-temp">Reset Temperature</button>
+    <button class="reset-temp-button" type="button" id="reset-temp">Reset Temperature</button>
 
     <h2>WEATHER MOFOS</h2>
     <form id="select-city">
-      <input id="user-input" type="text" placeholder="Type in your city"></input><br><br>
+      <input id="user-input" class="text-field" type="text" placeholder="Type in your city"></input><br><br>
       <input type="submit"></input>
     </form>
 
     <p>City Weather</p>
-    <p id="city"><p>
     <p id="city-temperature"><p>
+    <p id="city"><p>
     <p id="city-weather"><p>
 
     <script src"js/thermostat.js"></script>

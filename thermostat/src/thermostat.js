@@ -50,15 +50,12 @@ Thermostat.prototype.resetButton = function () {
 Thermostat.prototype.changeColour = function () {
   if (this.temperature < 18) {
     this.displayColour = "Green";
-    document.body.style.backgroundColor = "green";
 
   } else if (this.temperature >= 18 && this.temperature < 25) {
     this.displayColour = "Yellow";
-    document.body.style.backgroundColor = "yellow";
 
   } else {
     this.displayColour = "Red";
-    document.body.style.backgroundColor = "red";
   };
 
 };
