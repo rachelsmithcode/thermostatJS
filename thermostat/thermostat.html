@@ -4,25 +4,40 @@
     <title>Marion and Zee's Awesome Thermostat</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script src="src/thermostat.js"></script>
-    <script src="src/thermostatUI.js"></script>
+    <script src="src/thermostatConsole.js"></script>
+    <script src="src/weatherAPI.js"></script>
 
   </head>
 
   <body>
-    <a href="http://jquery.com/">jQuery</a>
     <h1>Thermosteezy bruv</h1>
+
     <h2>Temperature</h2>
     <p>Temperature is: </p>
     <h1 id="temp"></h1>
     <button type="button" id="increase-temp">Increase Temperature</button><br><br>
     <button type="button" id="decrease-temp">Decrease Temperature</button><br><br>
+
     <h2>Power Saving Mode</h2>
     <p>Power Saving Mode is:</p>
     <p id="psm">On<p>
     <button type="button" id="psm-on">Power Saving Mode On</button><br><br>
     <button type="button" id="psm-off">Power Saving Mode Off</button><br><br>
+
     <h2>Reset</h2>
     <button type="button" id="reset-temp">Reset Temperature</button>
+
+    <h2>WEATHER MOFOS</h2>
+    <form id="select-city">
+      <input id="user-input" type="text" placeholder="Type in your city"></input><br><br>
+      <input type="submit"></input>
+    </form>
+
+    <p>City Weather</p>
+    <p id="city"><p>
+    <p id="city-temperature"><p>
+    <p id="city-weather"><p>
+
     <script src"js/thermostat.js"></script>
   </body>
 </html>
