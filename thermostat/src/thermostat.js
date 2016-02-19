@@ -9,7 +9,7 @@ function Thermostat(){
   this.temperature = _START_TEMPERATURE;
   this.powerSavingMode = true;
   this.maxTemperature = _MAX_TEMPERATURE_ON;
-  this.displayColour = "Yellow";
+  this.displayColour = "medium";
   this.changeColour();
 };
 
@@ -33,6 +33,16 @@ Thermostat.prototype.down = function(){
   this.changeColour();
 };
 
+Thermostat.prototype.powerSavingModeSwitch = function(){
+  if (this.powerSavingMode === true) {
+    this.powerSavingMode = false
+    this.maxTemperature = _MAX_TEMPERATURE_OFF;
+  } else {
+    this.powerSavingMode = true
+    this.maxTemperature = _MAX_TEMPERATURE_ON;
+  };
+};
+
 Thermostat.prototype.powerSavingModeOn = function(){
   this.powerSavingMode = true;
   this.maxTemperature = _MAX_TEMPERATURE_ON;
@@ -43,19 +53,20 @@ Thermostat.prototype.powerSavingModeOff = function(){
   this.maxTemperature = _MAX_TEMPERATURE_OFF;
 };
 
-Thermostat.prototype.resetButton = function () {
+Thermostat.prototype.resetButton = function() {
   this.temperature = 20
+  this.changeColour();
 };
 
-Thermostat.prototype.changeColour = function () {
+Thermostat.prototype.changeColour = function() {
   if (this.temperature < 18) {
-    this.displayColour = "Green";
+    this.displayColour = "low";
 
   } else if (this.temperature >= 18 && this.temperature < 25) {
-    this.displayColour = "Yellow";
+    this.displayColour = "medium";
 
   } else {
-    this.displayColour = "Red";
+    this.displayColour = "high";
   };
 
 };

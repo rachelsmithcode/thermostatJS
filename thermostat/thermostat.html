@@ -1,31 +1,28 @@
 <DOCTYPE! html>
 <html>
   <head>
-    <title>T-1000</title>
+    <title>TEMP-RAPTURE</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script src="src/thermostat.js"></script>
     <script src="src/thermostatConsole.js"></script>
     <script src="src/weatherAPI.js"></script>
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,800,300italic' rel='stylesheet' type='text/css'>
   </head>
 
   <body>
-    <h1>Thermonator-1000</h1>
+    <div class="transparancy">
+    <h1 id="maintitle">TEMP-RAPTURE</h1>
 
-    <h2>Temperature</h2>
-    <p>Temperature is: </p>
-    <h1 id="temp"></h1>
-    <button type="button" id="increase-temp">Increase Temperature</button><br><br>
-    <button type="button" id="decrease-temp">Decrease Temperature</button><br><br>
+    <h1 id="temp"></h1><button type="button" id="increase-temp">UP</button><br><button type="button" id="decrease-temp">DOWN</button><br><br>
 
-    <h2>Power Saving Mode</h2>
     <p>Power Saving Mode is:</p>
     <p id="psm">On<p>
-    <button type="button" id="psm-on">Power Saving Mode On</button><br><br>
+    <span id="test"><button class="goldButton" type="button" id="CAT">TEST</button><br><br></span>
+    <button class="goldButton" type="button" id="psm-on">Power Saving Mode On</button><br><br>
     <button type="button" id="psm-off">Power Saving Mode Off</button><br><br>
 
-    <h2>Reset</h2>
-    <button class="reset-temp-button" type="button" id="reset-temp">Reset Temperature</button>
+    <button class="reset-temp-button" type="button" id="reset-temp">RESET</button>
 
     <h2>WEATHER MOFOS</h2>
     <form id="select-city">
@@ -33,10 +30,10 @@
       <input type="submit"></input>
     </form>
 
-    <p>City Weather</p>
-    <p id="city-temperature"><p>
-    <p id="city"><p>
-    <p id="city-weather"><p>
+    <p class="weatherbox">City Weather</p>
+    <p class="weatherbox" id="city-temperature"><p>
+    <p class="weatherbox" id="city"><p>
+    <p class="weatherbox" id="city-weather"><p></div>
 
     <script src"js/thermostat.js"></script>
   </body>

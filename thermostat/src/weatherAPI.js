@@ -13,7 +13,6 @@ $( document ).ready(function() {
       console.log(report)
       console.log(report.temp)
       console.log(report.weather[0])
-
     });
 
   });
